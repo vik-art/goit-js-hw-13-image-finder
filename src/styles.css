@@ -60,6 +60,11 @@ p {
   background-color: blanchedalmond;
   width: 100%;
 }
+.stats-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .stats > p {
   text-align: center;
 }
