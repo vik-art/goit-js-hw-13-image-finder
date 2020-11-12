@@ -18,6 +18,7 @@ html {
   height: 40px;
   width: 80px;
   border-radius: 10px;
+  margin-left: 10px;
   box-shadow: 0px 2px 1px 1px rgba(0, 0, 0, 0.05);
   background-color: rgb(203, 159, 245);
   cursor: pointer;
@@ -26,6 +27,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 30px;
 }
 
 .gallery {
@@ -39,13 +41,12 @@ html {
 .photo-card {
   box-shadow: 0px 2px 1px rgba(0, 0, 0, 0.2), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 1px 3px rgba(0, 0, 0, 0.12);
-  width: calc((100% - 4 * 30px) / 4);
   height: auto;
   margin: 15px;
+  position: relative;
 }
 .image-container > img {
   width: 100%;
-  height: auto;
 }
 p {
   margin: 0;
@@ -53,6 +54,14 @@ p {
 .stats {
   display: flex;
   justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+  background-color: blanchedalmond;
+  width: 100%;
+}
+.stats > p {
+  text-align: center;
 }
 .button.is-hidden {
   display: none;
@@ -66,4 +75,20 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+@media screen and (max-width: 600px) {
+  .photo-card {
+    width: 100%;
+    height: auto;
+  }
+}
+@media screen and (min-width: 768px) {
+  .photo-card {
+    width: calc((100% - 2 * 30px) / 2);
+  }
+}
+@media screen and (min-width: 900px) {
+  .photo-card {
+    width: calc((100% - 4 * 30px) / 4);
+  }
 }
