@@ -3,7 +3,7 @@ import ImageApiService from './apiservice';
 import imagesTpl from './templates/imageTpl.hbs';
 import LoadMoreBtn from './load-more-btn';
 
-import { inform, error } from '@pnotify/core';
+import { alert, error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
 
@@ -23,7 +23,7 @@ function onSearch(e) {
     e.preventDefault();
     imageApiService.query = e.currentTarget.elements.query.value;
     if(imageApiService.query === "") {
-        return inform ({
+         return alert ({
           text: 'Please, enter the value',
           delay: 2000,
           closeHover: true,
