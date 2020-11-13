@@ -2,10 +2,12 @@ import './styles.css';
 import ImageApiService from './apiservice';
 import imagesTpl from './templates/imageTpl.hbs';
 import LoadMoreBtn from './load-more-btn';
+import {openModal} from './modal'
 
 import { alert, error } from '@pnotify/core';
 import '@pnotify/core/dist/PNotify.css';
 import '@pnotify/core/dist/BrightTheme.css';
+
 
 const formRef = document.querySelector('.js-search-form');
 const galleryRef = document.querySelector('.js-gallery');
@@ -17,7 +19,8 @@ const loadMoreBtn = new LoadMoreBtn({
 const imageApiService = new ImageApiService();
 
 formRef.addEventListener('submit', onSearch);
-loadMoreBtn.refs.button.addEventListener('click', loadMoreImages)
+loadMoreBtn.refs.button.addEventListener('click', loadMoreImages);
+galleryRef.addEventListener('click', openModal);
 
 function onSearch(e) {
     e.preventDefault();
@@ -48,6 +51,9 @@ function fetchImages() {
           delay: 2000,
           closerHover: true,
         })
+      }  
+      if (images.length < 12) {
+        loadMoreBtn.hide();
       }
     });
   }
@@ -72,3 +78,5 @@ function loadMoreImages() {
     }, 2000)
   ).catch(error=>(console.log("error")))
 }
+
+

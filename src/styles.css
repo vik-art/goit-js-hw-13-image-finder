@@ -44,9 +44,17 @@ html {
   height: auto;
   margin: 15px;
   position: relative;
+  border-radius: 10px;
 }
-.image-container > img {
+.image {
   width: 100%;
+  height: 250px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.photo-card:hover,
+.photo-card:focus {
+  transform: scale(1.1);
 }
 p {
   margin: 0;
@@ -59,11 +67,14 @@ p {
   bottom: 0;
   background-color: blanchedalmond;
   width: 100%;
+  height: 40px;
 }
 .stats-item {
   display: flex;
   align-items: center;
-  justify-content: center;
+}
+.material-icons {
+  margin-right: 5px;
 }
 .stats > p {
   text-align: center;
